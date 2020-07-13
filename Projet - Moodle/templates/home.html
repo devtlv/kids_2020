@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Bienvenue sur le moodle de la classe {{ class_name }}</h1>
+
+    <p>Pour voir nos projets, <a href="{{ url_for('projets') }}">cliquez ici</a></p>
+{% endblock %}

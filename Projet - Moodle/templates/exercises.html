@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+<!-- templates/exercises.html -->
+{% block main %}
+    <ul>
+        {% for exo in exercices %}
+        <li><a href="/exercice/{{exo.id}}">{{ exo.titre }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

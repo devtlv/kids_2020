@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+        <p>Voici nos projets:</p>
+
+        <ol>
+            {% for projet in projets %}
+                <li>{{ projet }}</li>
+            {% endfor %}
+        </ol>
+{% endblock %}
+
+

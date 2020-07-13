@@ -1,0 +1,33 @@
+import turtle
+def draw_square(steps, inclinaison):
+    t = turtle.Pen()
+    t.right(inclinaison)
+    t.forward(steps)
+    t.right(90)
+    t.forward(steps)
+    t.right(90)
+    t.forward(steps)
+    t.right(90)
+    t.forward(steps)
+    t.right(90)
+    t.forward(steps)
+
+draw_square(100, 100)
+
+draw_square(100, 120)
+
+draw_square(100, 140)
+draw_square(100, 160)
+draw_square(100, 180)
+draw_square(100, 200)
+draw_square(100, 220)
+draw_square(100, 240)
+draw_square(100, 260)
+draw_square(100, 280)
+draw_square(100, 300)
+draw_square(100, 320)
+draw_square(100, 340)
+draw_square(100, 360)
+draw_square(100, 380)
+draw_square(100, 400)
+draw_square(100, 420)

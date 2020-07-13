@@ -1,0 +1,70 @@
+<!-- TEMPLATES/BASE.HTML -->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Moodle</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="/static/master.css" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/">Moodle</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarText"
+				aria-controls="navbarText"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				{% if not current_user.is_authenticated %}
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('sign_in' )}}"
+							>Sign in<span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('sign_up') }}"
+							>Sign up</a
+						>
+					</li>
+				</ul>
+				{% endif %}
+
+				<span class="navbar-text">
+					{% if current_user.is_authenticated %} Connecte: {{
+					current_user.username }} {% endif %}
+				</span>
+
+				<div class="collapse navbar-collapse" id="navbarText">
+					<a class="nav-link" href="{{url_for('add_exercise')}}"
+						>Ajouter exercice</a
+					>
+					<a class="nav-link" href="{{ url_for('exercises')}}"
+						>Voir exercices</a
+					>
+					{% if current_user.is_authenticated %}
+					<a class="nav-link" href="{{ url_for('logout') }}"
+						>Logout</a
+					>
+					{% endif %}
+				</div>
+			</div>
+		</nav>
+		<div class="main-container">
+			{% block main %} {% endblock %}
+		</div>
+	</body>
+</html>

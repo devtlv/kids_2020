@@ -1,0 +1,11 @@
+/* STATIC/MASTER.CSS */
+body{
+    background-color: black;
+    color: #edf5e1;
+}
+
+.main-container{
+    margin: auto;
+    margin-top: 100px;
+    width: 70%;
+}

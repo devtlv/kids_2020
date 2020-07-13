@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <form action="/add-exercise" method="POST">
+
+        <div class="form-group">
+            <label>Titre</label>
+            <input
+                type="text"
+                class="form-control"
+                id="titre"
+                name="titre"
+                placeholder="Choisis un titre"
+                maxlength="64">
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea
+                rows=4
+                class="form-control"
+                id="description"
+                name="description"
+                placeholder="Choisis une description"
+                maxlength="300">
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter un exercice</button>
+
+    </form>
+{% endblock %}
